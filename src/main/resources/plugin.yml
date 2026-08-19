@@ -1,0 +1,73 @@
+name: MoveCore
+version: '${project.version}'
+main: fr.neoscraft.movecore.MoveCorePlugin
+api-version: '1.21'
+authors: [neoscraft]
+softdepend: [LuckPerms, Multiverse-Core]
+commands:
+  home:
+    description: Teleport to a home
+    usage: "/home [name]"
+  sethome:
+    description: Create or update a home
+    usage: "/sethome <name>"
+  delhome:
+    description: Delete a home
+    usage: "/delhome <name>"
+  homes:
+    description: List homes
+    usage: "/homes [player]"
+  warp:
+    description: Teleport to a warp
+    usage: "/warp <name>"
+  setwarp:
+    description: Create an admin warp
+    usage: "/setwarp <name>"
+  delwarp:
+    description: Delete an admin warp
+    usage: "/delwarp <name>"
+  pwarp:
+    description: Teleport to a player warp
+    usage: "/pwarp <name>"
+  setpwarp:
+    description: Create a player warp
+    usage: "/setpwarp <name>"
+  delpwarp:
+    description: Delete a player warp
+    usage: "/delpwarp <name>"
+  spawn:
+    description: Teleport to the configured spawn
+    usage: "/spawn"
+  setspawn:
+    description: Set the global spawn
+    usage: "/setspawn"
+  tpa:
+    description: Request teleportation
+    usage: "/tpa <player>"
+  tpahere:
+    description: Ask a player to teleport here
+    usage: "/tpahere <player>"
+  tpaccept:
+    description: Accept a teleport request
+    usage: "/tpaccept"
+  tpdeny:
+    description: Deny a teleport request
+    usage: "/tpdeny"
+  tpalock:
+    description: Block teleport requests
+    usage: "/tpalock <player>"
+  tpaunlock:
+    description: Unblock teleport requests
+    usage: "/tpaunlock <player>"
+  rtp:
+    description: Teleport randomly
+    usage: "/rtp"
+  back:
+    description: Return to the previous location
+    usage: "/back"
+permissions:
+  movecore.admin: {default: op}
+  movecore.admin.homes.view: {default: op}
+  movecore.admin.homes.teleport: {default: op}
+  movecore.admin.homes.delete: {default: op}
+  movecore.admin.warps: {default: op}

@@ -1,0 +1,60 @@
+storage:
+  type: json
+  json-file: data.json
+  mysql:
+    jdbc-url: jdbc:mysql://localhost:3306/movecore
+    username: root
+    password: change-me
+    table-prefix: movecore_
+teleport:
+  warmup-millis: 3000
+  cancel-on-move: true
+  cooldown-millis: 0
+spawn:
+  cooldown-millis: 0
+  cancel-on-move: true
+  void-y: -64
+rtp:
+  min-radius: 100
+  max-radius: 5000
+  max-attempts: 32
+  blocked-worlds: []
+back:
+  cooldown-millis: 0
+  safe-search-radius: 8
+homes:
+  default-limit: 1
+  limits:
+    vip: 3
+    premium: 10
+warps:
+  default-player-limit: 1
+  player-limits:
+    vip: 3
+messages:
+  prefix: '&8[&bMoveCore&8] &7'
+  no-permission: '&cYou do not have permission.'
+  player-only: '&cThis command is for players only.'
+  player-not-found: '&cPlayer not found.'
+  invalid-name: '&cName must contain only letters, numbers, _ or -.'
+  home-created: '&aHome &f{home} &acreated.'
+  home-deleted: '&aHome &f{home} &adeleted.'
+  home-list: '&7Homes: &f{homes}'
+  home-missing: '&cThat home does not exist.'
+  limit-reached: '&cYou reached your limit ({limit}).'
+  warp-created: '&aWarp &f{warp} &acreated.'
+  warp-deleted: '&aWarp &f{warp} &adeleted.'
+  warp-missing: '&cThat warp does not exist.'
+  teleport-start: '&7Teleporting in &f{seconds}s&7. Do not move.'
+  teleport-cancelled: '&cTeleport cancelled because you moved.'
+  teleport-cooldown: '&cYou must wait &f{seconds}s&c.'
+  teleport-success: '&aTeleported.'
+  spawn-missing: '&cSpawn has not been set.'
+  tpa-sent: '&aTeleport request sent to &f{player}&a.'
+  tpa-received: '&f{player} &7wants to teleport to you. Use &f/tpaccept&7 or &f/tpdeny&7.'
+  tpa-accepted: '&aTeleport request accepted.'
+  tpa-denied: '&cTeleport request denied.'
+  tpa-locked: '&aRequests from &f{player} &aare blocked.'
+  tpa-unlocked: '&aRequests from &f{player} &aare allowed.'
+  rtp-failed: '&cNo safe location found.'
+  back-missing: '&cNo previous location is available.'
