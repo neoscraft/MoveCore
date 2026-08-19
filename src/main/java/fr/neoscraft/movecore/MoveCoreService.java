@@ -40,7 +40,7 @@ public final class MoveCoreService implements Listener {
         state = store.load();
         Bukkit.getPluginManager().registerEvents(this, plugin);
         MoveCoreCommand command = new MoveCoreCommand(this);
-        for (String name : List.of("home", "sethome", "delhome", "homes", "warp", "setwarp", "delwarp",
+        for (String name : List.of("movecore", "home", "sethome", "delhome", "homes", "warp", "setwarp", "delwarp",
                 "pwarp", "setpwarp", "delpwarp", "spawn", "setspawn", "tpa", "tpahere", "tpaccept",
                 "tpdeny", "tpalock", "tpaunlock", "rtp", "back")) {
             if (plugin.getCommand(name) != null) {

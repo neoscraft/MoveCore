@@ -5,6 +5,10 @@ api-version: '1.21'
 authors: [neoscraft]
 softdepend: [LuckPerms, Multiverse-Core]
 commands:
+  movecore:
+    description: Manage MoveCore
+    usage: "/movecore reload"
+    permission: movecore.admin
   home:
     description: Teleport to a home
     usage: "/home [name]"

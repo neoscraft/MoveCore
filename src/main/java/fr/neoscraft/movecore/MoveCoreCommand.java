@@ -25,6 +25,14 @@ public final class MoveCoreCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         String name = command.getName().toLowerCase(Locale.ROOT);
         Player player = sender instanceof Player p ? p : null;
+        if (name.equals("movecore")) {
+            if (!sender.hasPermission("movecore.admin")) return deny(sender);
+            if (args.length != 1 || !args[0].equalsIgnoreCase("reload")) return false;
+            service.send(sender, "reloaded");
+            Bukkit.getPluginManager().disablePlugin(service.plugin());
+            Bukkit.getPluginManager().enablePlugin(service.plugin());
+            return true;
+        }
         if (name.equals("setspawn")) {
             if (!sender.hasPermission("movecore.admin")) return deny(sender);
             if (player == null) return playerOnly(sender);
@@ -255,7 +263,9 @@ public final class MoveCoreCommand implements CommandExecutor, TabCompleter {
         if (args.length != 1) return List.of();
         String prefix = args[0].toLowerCase(Locale.ROOT);
         List<String> values = new ArrayList<>();
-        if (command.getName().equalsIgnoreCase("home") && sender instanceof Player player) {
+        if (command.getName().equalsIgnoreCase("movecore")) {
+            if (sender.hasPermission("movecore.admin")) values.add("reload");
+        } else if (command.getName().equalsIgnoreCase("home") && sender instanceof Player player) {
             values.addAll(service.homes(player.getUniqueId()).keySet());
         } else if (command.getName().equalsIgnoreCase("warp")) {
             values.addAll(service.state().warps.keySet());

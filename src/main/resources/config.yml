@@ -34,6 +34,7 @@ warps:
 messages:
   prefix: '&8[&bMoveCore&8] &7'
   no-permission: '&cYou do not have permission.'
+  reloaded: '&aMoveCore reloaded.'
   player-only: '&cThis command is for players only.'
   player-not-found: '&cPlayer not found.'
   invalid-name: '&cName must contain only letters, numbers, _ or -.'
